@@ -6,7 +6,854 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>欢迎来到Steam</title>
-    <link href="style.css" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0
+}
+
+em,
+i {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+button {
+    cursor: pointer
+}
+
+a {
+    color: #666;
+    text-decoration: none
+}
+
+a:hover {
+    color: #fff
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #1a293a;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #666
+}
+
+.hide,
+.none {
+    display: none
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.liang {
+
+    background-color: rgb(225, 231, 244) !important;
+}
+
+.header {
+    height: 100px;
+    background-color: #171a21;
+}
+
+.header .juzhong {
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+
+}
+
+.header .steam img {
+    width: 200px;
+    height: 50px;
+    margin: 25px 0;
+    float: left;
+}
+
+.header .mulu {
+    height: 100px;
+    width: 200px;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    font-size: 16px;
+    color: #79797a;
+}
+
+.header .mulu a {
+    margin: 0 3px;
+}
+
+.header .denglu {
+    float: right;
+    width: 220px;
+    height: 100px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.header .anzhuang {
+    background-color: #5c7e10;
+    text-align: center;
+    line-height: 20px;
+    width: 100px;
+    float: left;
+    color: #fff;
+    height: 20px;
+}
+
+.denglu i {
+    /* display: block; */
+    margin: 0 10px;
+}
+
+.header .kun {
+    margin-left: 10px;
+}
+
+.header .kung {
+    margin-right: 10px;
+}
+
+.sanjiao {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+    float: right;
+    margin-top: 10px;
+}
+
+.sousuo {
+    height: 400px;
+    position: relative;
+}
+
+.sousuo video {
+    top: 0;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    object-fit: fill;
+    position: absolute;
+}
+
+.sousuo .kang {
+    width: 1000px;
+    height: 40px;
+    margin: 30px auto;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #79797a, #1a293a);
+    position: absolute;
+    z-index: -3;
+}
+
+.sousuo .juzhong {
+    width: 1000px;
+    height: 40px;
+    margin: 0 auto;
+
+}
+
+.sousuo .kuai {
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    width: 100px;
+    float: left;
+}
+
+.sousuo a {
+    width: 100px;
+    height: 40px;
+}
+
+.sousuo a:hover {
+    background-image: linear-gradient(to left, #79797a, #1a293a);
+}
+
+.search {
+    float: right;
+    height: 40px;
+    width: 300px;
+}
+
+.search img {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    float: right;
+    border: 1px solid #3e6092;
+}
+
+.search input {
+    height: 36px;
+    width: 200px;
+    border: 2px solid #3e6092;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 10px;
+    float: right;
+    /* outline: none; */
+}
+
+.zzz {
+    width: 1400px;
+    margin-top: 30px;
+
+}
+
+.bar {
+    float: left;
+    width: 196px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.bar .tu {
+    height: 100px;
+}
+
+.bar .tu img {
+    width: 100%;
+    height: 100%;
+}
+
+.bar .near a {
+    display: block;
+    color: #66c0f4;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.bar .bord {
+    margin-top: 10px;
+    color: #c6d4df;
+    font-size: 12px;
+}
+
+.bar .near a:hover {
+    color: #fff;
+}
+
+.content {
+    float: left;
+    margin-left: 20px;
+    position: relative;
+}
+
+.kuang p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.content .searchleft {
+    height: 350px;
+    width: 600px;
+    float: left;
+    margin-top: 10px;
+}
+
+.content .searchleft img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.content .searchreight {
+    background-color: #171a21;
+    width: 400px;
+    height: 350px;
+    float: left;
+    margin-top: 10px;
+}
+
+.searchreight h3 a {
+    display: block;
+    width: 50px;
+    margin: 20px 10px;
+    font-size: 22px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.searchreight .herrk1 {
+    width: 190px;
+    height: 80px;
+    margin-right: 10px;
+    float: left;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.searchreight .herrk2 {
+    width: 190px;
+    height: 80px;
+    margin-left: 10px;
+    float: left;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.searchreight .herrk1 img,
+.searchreight .herrk2 img {
+    width: 180px;
+    height: 80px;
+}
+
+.searchreight h2 a {
+    color: #fff;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.searchreight .re {
+    width: 70px;
+    height: 16px;
+    background-color: #4f555d;
+    line-height: 16px;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.searchreight .re a {
+    color: #fff;
+}
+
+.searchreight .price {
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.lb .bun,
+.zunn .bun,
+.kuang .bun {
+    width: 15px;
+    height: 10px;
+    margin: 10px 5px;
+    background-color: #8091a4;
+    border-radius: 3px;
+    float: left;
+    cursor: pointer;
+}
+
+
+.kuang .zong {
+    width: 300px;
+    height: 50px;
+    margin: 20px auto;
+}
+
+.content .zuo {
+    height: 100px;
+    width: 40px;
+    background-color: #091f2f;
+    color: #fff;
+    position: absolute;
+    left: -40px;
+    top: 128px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+
+}
+
+.content .zuo:hover {
+    background-image: linear-gradient(to left, #091f2f, #546978);
+}
+
+.content .you {
+    height: 100px;
+    width: 40px;
+    background-color: #091f2f;
+    color: #fff;
+    position: absolute;
+    right: -40px;
+    top: 128px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+
+}
+
+.content .you:hover {
+    background-image: linear-gradient(to right, #091f2f, #546978);
+}
+
+.timing {
+    width: 1000px;
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    float: left;
+    margin-left: 20px;
+}
+
+.timing img {
+    width: 100%;
+    height: 100%;
+}
+
+.oh {
+    width: 100px;
+    height: 20px;
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.ho {
+    float: right;
+    height: 20px;
+    width: 80px;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #7a7c80;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.ho:hover {
+    border: 1px solid #fff;
+}
+
+.zun {
+    width: 1000px;
+    position: relative;
+    margin-left: 20px;
+    float: left;
+    z-index: -1000;
+}
+
+.zun .temai,
+.zun .zhzh {
+    width: 300px;
+    height: 390px;
+    float: left;
+    margin-right: 10px;
+}
+
+.temai img,
+.zhzh img {
+    width: 300px;
+    height: 290px;
+}
+
+.speak {
+    width: 300px;
+    height: 120px;
+    background-color: rgba(52, 151, 217, 0.634);
+    position: relative;
+    bottom: 0;
+}
+
+.speak .hh {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 20px;
+    padding-top: 10px;
+    font-weight: 400;
+}
+
+.speak .h {
+    display: block;
+    margin: 10px 20px;
+    color: #b6c3d6;
+}
+
+.speak .jian {
+    background-color: #4c6b22;
+    color: #beee11;
+    width: 90px;
+    height: 40px;
+    margin-left: 20px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.speak .jia {
+    background-color: #344654;
+    width: 90px;
+    height: 40px;
+    float: left;
+}
+
+.jia p del {
+    color: gray;
+    margin-left: 30px;
+}
+
+.jia h4 {
+    height: 20px;
+    color: #beee11;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-left: 10px;
+    line-height: 20px;
+}
+
+.tehui {
+    width: 380px;
+    height: 200px;
+    margin-bottom: 20px;
+    float: left;
+    z-index: -100;
+}
+
+.jinri img,
+.tehui img {
+    width: 380px;
+    height: 140px;
+}
+
+.jinri .bai,
+.tehui .bai {
+    height: 50px;
+    width: 380px;
+    background-color: #afdcf4;
+}
+
+.jinri .b,
+.tehui .b {
+    color: #000;
+    font-weight: 300;
+    margin-left: 10px;
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.tehui .a {
+    width: 80px;
+    height: 40px;
+    float: right;
+    color: #beee11;
+    background-color: #4c6b22;
+    font-size: 24px;
+    margin-top: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.tehui .i {
+    width: 80px;
+    height: 40px;
+    float: right;
+    background-color: #344654;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.tehui .sa del {
+    text-align: center;
+    color: #758c9c;
+    display: block;
+    margin-left: 5px;
+}
+
+.tehui .xa {
+    display: block;
+    color: #beee11;
+    text-align: center;
+    font-style: 14px;
+    font-size: 14px;
+}
+
+.jinri {
+    width: 380px;
+    height: 200px;
+    float: left;
+    z-index: -100;
+}
+
+.jinri .a {
+    width: 160px;
+    height: 40px;
+    float: right;
+    color: #beee11;
+    background-color: #4c6b22;
+    font-size: 24px;
+    margin-top: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.zun .zuo {
+    height: 100px;
+    width: 40px;
+    background-color: #091f2f;
+    color: #fff;
+    position: absolute;
+    left: -40px;
+    top: 190px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+
+}
+
+.zun .zuo:hover {
+    background-image: linear-gradient(to left, #091f2f, #546978);
+}
+
+.zunn {
+    width: 1000px;
+
+
+    float: left;
+    z-index: -1000;
+}
+
+.zunn .temai,
+.zunn .zhzh {
+    width: 300px;
+    height: 390px;
+    float: left;
+    margin-right: 10px;
+}
+
+.zun .you {
+    height: 100px;
+    width: 40px;
+    background-color: #091f2f;
+    color: #fff;
+    position: absolute;
+    right: -40px;
+    top: 190px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+
+}
+
+.zun .you:hover {
+    background-image: linear-gradient(to right, #091f2f, #546978);
+}
+
+.lb .zong,
+.zunn .zong {
+    width: 100px;
+    height: 50px;
+    margin: 20px auto;
+}
+
+.lb {
+    float: left;
+    position: relative;
+}
+
+.lb h2 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.lb img {
+    width: 242px;
+    height: 242px;
+    float: left;
+    margin-right: 10px;
+}
+
+.lb .hhhh {
+    margin-right: 0;
+}
+
+.lb .you {
+    height: 100px;
+    width: 40px;
+    background-color: #091f2f;
+    color: #fff;
+    position: absolute;
+    right: -40px;
+    top: 190px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+
+}
+
+.lb .you:hover {
+    background-image: linear-gradient(to right, #091f2f, #546978);
+}
+
+.lb .zuo {
+    height: 100px;
+    width: 40px;
+    background-color: #091f2f;
+    color: #fff;
+    position: absolute;
+    right: -40px;
+    top: 190px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+
+}
+
+.lb .zuo:hover {
+    background-image: linear-gradient(to left, #091f2f, #546978);
+}
+
+.jie {
+    background-color: #16202d;
+    float: left;
+    width: 1000px;
+    height: 150px;
+    margin-top: 100px;
+}
+
+.jie .lu {
+    text-align: center;
+    margin: 10px auto;
+    color: #c6d4df;
+    font-size: 16px;
+}
+
+.jie .luu {
+    width: 50px;
+    text-align: center;
+    margin: 20px auto;
+    background-color: #5c7e10;
+    color: #afb9c7;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.jie .luu:hover {
+    color: #fff;
+    background-color: #9eac81;
+}
+
+.jie .luuu {
+    text-align: center;
+    margin: 10px auto;
+    color: #c6d4df;
+    font-size: 16px;
+}
+
+.luuu a {
+    color: #fff;
+}
+
+.luuu a:hover {
+    color: #758c9c;
+}
+
+.di {
+    margin-top: 200px;
+    width: 1518px;
+    height: 200px;
+    background-color: #16202d;
+    float: left;
+    z-index: 100;
+}
+
+.ru {
+    margin: 0 auto;
+    width: 1192px;
+    height: 200px;
+}
+
+.xian {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-top: 1px solid #c6d4df;
+    border-bottom: 1px solid #c6d4df;
+    width: 1192px;
+    height: 80px;
+}
+
+.xian .ttu {
+    float: left;
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+}
+
+.xian .ttu img {
+    width: 150px;
+    height: 40px;
+}
+
+.xian .zi {
+    margin-top: 10px;
+    color: #758c9c;
+    float: left;
+    margin-left: 20px;
+}
+
+.zizi {
+    float: left;
+    margin-left: 20px;
+    color: #758c9c;
+}
+
+.end i,
+.zizi i {
+    margin: 0 10px;
+}
+
+.end a,
+.zizi a {
+    color: #afb9c7;
+}
+
+.end a:hover,
+.zizi a:hover {
+    color: #fff;
+}
+
+.xian .tttu {
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-top: -10px;
+}
+
+.daaaa {
+    font-size: 14px;
+}
+    </style>
 </head>
 
 <body>
